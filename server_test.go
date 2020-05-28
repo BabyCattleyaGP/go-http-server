@@ -4,8 +4,6 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"testing"
-
-	"syreclabs.com/go/faker"
 )
 
 func TestGETPlayers(t *testing.T) {
@@ -16,7 +14,7 @@ func TestGETPlayers(t *testing.T) {
 		PlayerServer(response, request)
 
 		got := response.Body.String()
-		want := faker.Number().Number(2)
+		want := "20"
 
 		if got != want {
 			t.Errorf("got %q, want %q", got, want)
